@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEP-2020 Mathematics Teacher Training</title>
+  <meta name="description" content="Official NEP-2020 Mathematics Teacher Training by Javaid Ahmad Bhat. Explore pedagogical reforms, joyful learning, and competency-based teaching.">
+  <meta property="og:title" content="NEP-2020 Mathematics Teacher Training">
+  <meta property="og:description" content="Empowering Teachers for Joyful, Concept-based Math Instruction">
+  <meta property="og:image" content="https://yourwebsite.com/banner.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #005a87;
+      --accent-color: #f9c74f;
+      --background: linear-gradient(to bottom right, #e0f7fa, #f4f8fb);
+      --text-color: #333;
+      --card-bg: rgba(255, 255, 255, 0.75);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--background);
+      color: var(--text-color);
+      backdrop-filter: blur(5px);
+      transition: background 0.4s ease, color 0.4s ease;
+      text-align: center;
+    }
+
+    header {
+      background: linear-gradient(to right, #005a87, #0088a9);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      width: 100%;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 25px;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transform: translateY(20px);
+      opacity: 0;
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      text-align: justify;
+    }
+
+    section.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    section h2 {
+      color: var(--primary-color);
+      margin-top: 0;
+      text-align: center;
+    }
+
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      background: linear-gradient(45deg, #005a87, #007ea7);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: transform 0.2s, background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #003d5e;
+      animation: pulse 0.6s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.05);
+      }
+    }
+
+    .tribute-image img {
+      max-width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      display: block;
+      margin: auto;
+    }
+
+    .quote-box {
+      background: rgba(255, 255, 255, 0.6);
+      border-left: 6px solid var(--primary-color);
+      padding: 20px;
+      font-style: italic;
+      margin-top: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      text-align: justify;
+    }
+
+    .quote-box::before {
+      content: "“";
+      font-size: 2rem;
+      color: var(--accent-color);
+      position: absolute;
+      left: 10px;
+      top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.4);
+      color: #444;
+      font-size: 14px;
+      border-top: 1px solid #ccc;
+      backdrop-filter: blur(4px);
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      font-size: 14px;
+      border: none;
+      background: #007ea7;
+      color: white;
+      border-radius: 50px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .dark {
+      background: #111 !important;
+      color: #eee !important;
+    }
+
+    .dark section,
+    .dark .quote-box,
+    .dark footer {
+      background: rgba(255, 255, 255, 0.1) !important;
+      color: #ddd !important;
+    }
+
+    .dark .btn {
+      background: #444 !important;
+    }
+
+    .dark .btn:hover {
+      background: #666 !important;
+    }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 99999;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+    }
+
+    #lightbox span {
+      color: white;
+      font-size: 2rem;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+      }
+
+      .quote-box {
+        font-size: 0.95rem;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader"
+    style="position:fixed; top:0; left:0; width:100%; height:100%; background:white; display:flex; justify-content:center; align-items:center; z-index:9999;">
+    <span style="font-size:1.2rem; color:#005a87;">Loading…</span>
+  </div>
+
+  <!-- Dark Mode Toggle -->
+  <button onclick="document.body.classList.toggle('dark')"
+    style="position:fixed; top:15px; right:15px; z-index:1000; background: #333; color: white; border:none; padding: 8px 12px; border-radius: 8px;">🌙
+    Toggle Mode</button>
+
+  <header>
+    <h1>NEP-2020 Mathematics Teacher Training</h1>
+    <p>Empowering Teaching for Understanding & Joyful Learning</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>📘 Training Overview</h2>
+      <p>This training introduces key pedagogical reforms under the <strong>National Education Policy (NEP)
+          2020</strong> for mathematics instruction...</p>
+      <ul>
+        <li>🧠 Competency-based and concept-focused learning</li>
+        <li>🎨 Hands-on, joyful teaching strategies</li>
+        <li>💻 Use of technology and arts in teaching</li>
+        <li>👶 Age-appropriate goals for each stage</li>
+        <li>📊 Assessment reforms and inclusive practices</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🎯 Learning Objectives</h2>
+      <ul>
+        <li>Understand key pedagogical reforms...</li>
+        <li>Apply age-appropriate, activity-based strategies...</li>
+        <li>Integrate technology and arts...</li>
+        <li>Design competency-based lesson plans</li>
+        <li>Use assessment for learning...</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📅 Workshop Agenda</h2>
+      <table>
+        <tr>
+          <td>10:00 AM</td>
+          <td>Introduction & Icebreaker</td>
+        </tr>
+        <tr>
+          <td>10:15 AM</td>
+          <td>Understanding NEP-2020 Goals</td>
+        </tr>
+        <tr>
+          <td>10:40 AM</td>
+          <td>Pedagogical Shifts in Math Teaching</td>
+        </tr>
+        <tr>
+          <td>11:10 AM</td>
+          <td>Activity & Group Task</td>
+        </tr>
+        <tr>
+          <td>11:30 AM</td>
+          <td>Quiz & Open Discussion</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="tribute-image">
+      <img src="AB.jpeg" alt="Teacher Tribute Image">
+    </section>
+
+    <section>
+      <h2>🌟 A Tribute to an Inspirational Teacher</h2>
+      <div class="quote-box">
+        Sir I hope you are doing well! I often find myself reminiscing about my time in your class and the incredible
+        impact you had on my education. Your teaching style always inspired curiosity and encouraged us to think
+        critically. It's heartwarming to see that you’re continuing to pass on that same passion for learning to the new
+        generation. I have no doubt that your current students are experiencing the same excitement and growth that I
+        did. May Allah Bless you Sir.<br>– Amir Mir (Police Official)<br><br>
+        <strong>“Even GPS doesn't guide you if you have no destination.”</strong>
+      </div>
+    </section>
+
+    <section>
+      <h2>👨‍🏫 About the Speaker</h2>
+      <p><strong>🧑‍🏫 Javaid Ahmad Bhat,</strong> also known as Javaid Jawad, is a passionate educator and the Headmaster of
+          Government Middle School Onagam in Bandipora district, Jammu and Kashmir. With over two decades of experience,
+          he has taught Mathematics ➕, Science 🔬, and English 📘, inspiring countless students through his engaging and
+          value-driven teaching style. On September 5, 2021, he was honored with the Best Teacher Award 🏆 by the J&K
+          Administration in recognition of his commitment, honesty, and tireless efforts in improving the quality of
+          education. Under his leadership, student enrollment at his school doubled 📈, thanks to his innovative
+          practices and strong community involvement. He is also an active volunteer with the J&K Yateem Foundation 🤝,
+          where he works for educational upliftment and youth development. Respected widely as a role model 🌟, he
+          continues to transform lives through education and service.
+
+          💬 Public Praise
+          Described as an inspiring figure in rural education, especially for uplifting under-resourced schools and
+          making them centers of active learning and discipline.</p>
+    </section>
+
+    <section>
+      <h2>🎥 Videos</h2>
+      <div class="btn-container">
+        <a class="btn" href="https://drive.google.com/file/d/1vIT125IDK3rb7KQQk_H44_rzfHTaJjcg/view?usp=sharing" target="_blank">📽️ Joyful Method</a>
+        <a class="btn" href="https://www.ted.com/talks/erik_van_haren_mathjoy_the_awareness_mindset" target="_blank">📽️ TED Talk – Mathjoy</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>📄 View Full Training PDF</h2>
+      <iframe
+        src="https://docs.google.com/gview?url=https://saalim-2005.github.io/nep2020-math-training/Understanding-Pedagogical-Reforms-of-NEP-2020.pdf&embedded=true"></iframe>
+      <p><a class="btn"
+          href="https://saalim-2005.github.io/nep2020-math-training/Understanding-Pedagogical-Reforms-of-NEP-2020.pdf"
+          target="_blank">📥 Download PDF</a></p>
+    </section>
+
+    <section class="quiz-section">
+      <h2>🧠 Quiz</h2>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 30px;">
+
+        <!-- Left: Start Quiz Button -->
+        <div style="min-width: 200px; display: flex; align-items: center; justify-content: flex-end;">
+          <a class="btn" href="https://forms.gle/QgW4qhWhKudzS4Ah7" target="_blank" style="margin-top: -50px;">Start the
+            Quiz</a>
+        </div>
+
+        <!-- Right: QR Code + Caption -->
+        <div style="display: flex; flex-direction: column; align-items: center; position: relative;">
+          <img src="Quiz.png" alt="Quiz QR Code"
+            style="height: 140px; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.2);"
+            onclick="toggleQRPopup()" />
+
+          <!-- Zoomed QR Popup -->
+          <div id="qr-popup" style="
+                display: none;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+                padding: 10px;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+                z-index: 10;">
+            <span onclick="toggleQRPopup()"
+              style="position: absolute; top: 5px; right: 8px; font-size: 18px; font-weight: bold; cursor: pointer; color: #444;">&times;</span>
+            <img src="Quiz.png" alt="Zoomed QR Code" style="height: 280px; border-radius: 10px;">
+          </div>
+
+          <!-- Caption -->
+          <p style="font-size: 1.05rem; margin-top: 10px; font-style: italic; color: #333;">Scan The QR Code.</p>
+        </div>
+
+      </div>
+
+
+      <section>
+        <h2>🔔 Follow / Subscribe Me</h2>
+        <p style="text-align: center;">Stay connected for more educational updates and joyful math teaching content.</p>
+        <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 20px;">
+          <a href="https://www.facebook.com/javaid.jawad.56" target="_blank" title="Facebook">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/facebook.svg" alt="Facebook"
+              style="width: 40px; height: 40px; transition: transform 0.3s ease; filter: invert(18%) sepia(73%) saturate(747%) hue-rotate(182deg) brightness(91%) contrast(91%);"
+              onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+          </a>
+          <a href="https://x.com/JavaidJawad" target="_blank" title="X">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/x.svg" alt="X"
+              style="width: 40px; height: 40px; transition: transform 0.3s ease; filter: invert(100%) brightness(0%);"
+              onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+          </a>
+          <a href="https://www.youtube.com/@Javaid_Jawad_" target="_blank" title="YouTube">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/youtube.svg" alt="YouTube"
+              style="width: 40px; height: 40px; transition: transform 0.3s ease; filter: invert(16%) sepia(97%) saturate(7490%) hue-rotate(3deg) brightness(92%) contrast(108%);"
+              onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+          </a>
+          <a href="https://instagram.com/YourUsername" target="_blank" title="Instagram">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="Instagram"
+              style="width: 40px; height: 40px; transition: transform 0.3s ease; filter: invert(33%) sepia(84%) saturate(412%) hue-rotate(299deg) brightness(98%) contrast(93%);"
+              onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+          </a>
+        </div>
+      </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Javaid Jawad | Developed by 
+    <a href="https://www.instagram.com/saalimbhatt/" title="Saalim Bhat" target="_blank" style="color: blue; text-decoration: underline;">
+      Saalim Bhat
+    </a>
+  </footer>
+
+  <div id="lightbox">
+    <span onclick="document.getElementById('lightbox').style.display='none'">&times;</span>
+    <img src="Quiz.png" alt="Quiz QR Full Image" />
+  </div>
+
+  <button id="topBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑ Top</button>
+
+  <script>
+    // Preloader
+    window.addEventListener("load", () => {
+      document.getElementById("preloader").style.display = "none";
+    });
+
+    // Section reveal on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll("section").forEach(section => {
+      observer.observe(section);
+    });
+
+    // ESC key to close QR popup and lightbox
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        const popup = document.getElementById('qr-popup');
+        const lightbox = document.getElementById('lightbox');
+        if (popup) popup.style.display = 'none';
+        if (lightbox) lightbox.style.display = 'none';
+      }
+    });
+
+    // ✅ QR Code Toggle Function (in-place zoom)
+    function toggleQRPopup() {
+      const popup = document.getElementById('qr-popup');
+      popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+
+</html>
+
+</body>
+
+</html>
