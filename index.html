@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <title>NEP-2020 Mathematics Teacher Training</title>
   <meta name="description" content="Official NEP-2020 Mathematics Teacher Training by Javaid Ahmad Bhat. Explore pedagogical reforms, joyful learning, and competency-based teaching.">
   <meta property="og:title" content="NEP-2020 Mathematics Teacher Training">
@@ -527,7 +528,22 @@
         '_blank'
       );
     }
+  
+    // ❌ Disable Ctrl + / Ctrl - / Ctrl = zoom on desktop
+    document.addEventListener('keydown', function (event) {
+      if ((event.ctrlKey || event.metaKey) && (event.key === '+' || event.key === '-' || event.key === '=')) {
+        event.preventDefault();
+      }
+    });
+  
+    // ❌ Disable zoom with Ctrl + mouse wheel
+    window.addEventListener('wheel', function (e) {
+      if (e.ctrlKey) {
+        e.preventDefault();
+      }
+    }, { passive: false });
   </script>
+  
   
   
 
